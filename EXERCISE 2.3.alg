@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description texte="IMC" courant="SI (IMC>=25 ET IMC&lt;30) ALORS"/>
+    <description texte="IMC" courant="SI (IMC&lt;=25 ET IMC&lt;30) ALORS"/>
     <extension extnom="inactif"/>
     <fonction fctcode="" fctetat="inactif"/>
     <F2 F2defaut="" F2etat="inactif" F2para="" F2lignes=""/>
@@ -13,28 +13,38 @@
         <item code="1#NOMBRE#IMC" algoitem="IMC EST_DU_TYPE NOMBRE"/>
     </item>
     <item code="101#debutalgo" algoitem="DEBUT_ALGORITHME">
+        <item code="4#SAISIR VOTRE POIDS EN KG#0" algoitem="AFFICHER &quot;SAISIR VOTRE POIDS EN KG&quot;"/>
         <item code="2#POID#pasliste" algoitem="LIRE POID"/>
+        <item code="4#SAISIR VOTRE TAILLE EN CM#0" algoitem="AFFICHER &quot;SAISIR VOTRE TAILLE EN CM&quot;"/>
         <item code="2#TAILLE#pasliste" algoitem="LIRE TAILLE"/>
-        <item code="5#IMC#POID/pow(TAILLE,2)#pasliste" algoitem="IMC PREND_LA_VALEUR POID/pow(TAILLE,2)"/>
-        <item code="6#IMC>=30" algoitem="SI (IMC>=30) ALORS">
+        <item code="5#IMC#POID/pow(TAILLE/100,2)#pasliste" algoitem="IMC PREND_LA_VALEUR POID/pow(TAILLE/100,2)"/>
+        <item code="6#IMC&lt;18.5" algoitem="SI (IMC&lt;18.5) ALORS">
             <item code="7#debutsi" algoitem="DEBUT_SI"/>
-            <item code="4#OBESITE#0" algoitem="AFFICHER &quot;OBESITE&quot;"/>
-            <item code="6#IMC>=30" algoitem="SI (IMC>=30) ALORS">
-                <item code="7#debutsi" algoitem="DEBUT_SI"/>
-                <item code="4#OBESITE#1" algoitem="AFFICHER &quot;OBESITE&quot;"/>
-                <item code="8#finsi" algoitem="FIN_SI"/>
-            </item>
-            <item code="6#IMC>=25 ET IMC&lt;30" algoitem="SI (IMC>=25 ET IMC&lt;30) ALORS">
-                <item code="7#debutsi" algoitem="DEBUT_SI"/>
-                <item code="4#SURPOIDS#1" algoitem="AFFICHER &quot;SURPOIDS&quot;"/>
-                <item code="8#finsi" algoitem="FIN_SI"/>
-            </item>
-            <item code="6#IMC>=18.5 ET IMC&lt;25" algoitem="SI (IMC>=18.5 ET IMC&lt;25) ALORS">
-                <item code="7#debutsi" algoitem="DEBUT_SI"/>
-                <item code="4#POIDS NORMAL#1" algoitem="AFFICHER &quot;POIDS NORMAL&quot;"/>
-                <item code="8#finsi" algoitem="FIN_SI"/>
-            </item>
+            <item code="4#Insuffisance ponderale#0" algoitem="AFFICHER &quot;Insuffisance ponderale&quot;"/>
             <item code="8#finsi" algoitem="FIN_SI"/>
+            <item code="9#sinon" algoitem="SINON">
+                <item code="10#debutsinon" algoitem="DEBUT_SINON"/>
+                <item code="6#IMC&lt;=18.5 ET IMC&lt;25" algoitem="SI (IMC&lt;=18.5 ET IMC&lt;25) ALORS">
+                    <item code="7#debutsi" algoitem="DEBUT_SI"/>
+                    <item code="4#Poids normal#0" algoitem="AFFICHER &quot;Poids normal&quot;"/>
+                    <item code="8#finsi" algoitem="FIN_SI"/>
+                    <item code="9#sinon" algoitem="SINON">
+                        <item code="10#debutsinon" algoitem="DEBUT_SINON"/>
+                        <item code="6#IMC&lt;=25 ET IMC&lt;30" algoitem="SI (IMC&lt;=25 ET IMC&lt;30) ALORS">
+                            <item code="7#debutsi" algoitem="DEBUT_SI"/>
+                            <item code="4#Surpoids#0" algoitem="AFFICHER &quot;Surpoids&quot;"/>
+                            <item code="8#finsi" algoitem="FIN_SI"/>
+                            <item code="9#sinon" algoitem="SINON">
+                                <item code="10#debutsinon" algoitem="DEBUT_SINON"/>
+                                <item code="4#Obesité#0" algoitem="AFFICHER &quot;Obesité&quot;"/>
+                                <item code="11#finsinon" algoitem="FIN_SINON"/>
+                            </item>
+                        </item>
+                        <item code="11#finsinon" algoitem="FIN_SINON"/>
+                    </item>
+                </item>
+                <item code="11#finsinon" algoitem="FIN_SINON"/>
+            </item>
         </item>
     </item>
     <item code="102#finalgo" algoitem="FIN_ALGORITHME"/>
