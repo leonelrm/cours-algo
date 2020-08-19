@@ -1,0 +1,10 @@
+let A = 5;
+let B =13;
+let C;
+console.log("valeur initial de A " + A);
+console.log("valeur initial de B " + B);
+C = A;
+A = B;
+B = C;
+console.log("nouveau valeur de A " + A);
+console.log("nouveau valeur de B " + B);
