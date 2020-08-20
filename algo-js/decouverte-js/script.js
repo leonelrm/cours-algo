@@ -71,70 +71,48 @@ if (age < 18){
     console.log("Division Normal");
 }else {
     console.log("Champions League");
-}*/
-/*let temperatureLeau = Number(prompt("entrez la temperature de l'eau en c°:"));
-if (temperatureLeau <= 0){
-    console.log("l'eau est en etat Glace");
-}else if (temperatureLeau > 0 && temperatureLeau < 100){
-    console.log("L'eau est en etat liquide");
-}else{
-    console.log("L'eau est en etat Vapeur");
-}*/
-/*let categorieSportive = Number(prompt("entrez votre age pour determine votre categorie sportive:"));
-if (categorieSportive >= 6 && categorieSportive <= 7){
-    console.log("Poussin");
-}else if (categorieSportive >= 8 && categorieSportive <= 9){
-    console.log("Pupille");
-}else if (categorieSportive >= 10 && categorieSportive <= 11){
-    console.log("Minime");
-}else if (categorieSportive >= 12){
-    console.log("cadet");
-}else{
-    console.log("Categorie non trouve")
-}*/
-/*let A = 5;
-let B = 13;
-let C;
-console.log("valeur initial de A " + A);
-console.log("valeur initial de B " + B);
-C = A;
-A = B;
-B = C;
-console.log("nouveau valeur de A " + A);
-console.log("nouveau valeur de B " + B);*/
 
-/*let Poids = Number(prompt("entrez votre Poids en KG " ));
-let Taille = Number(prompt("entrez votre Taille en CM "));
-let IMC= Poids/((Taille/100)*(Taille/100));
-if (IMC<18.5){
-    console.log("Insuffisance ponderale")
-}else if (IMC>=18.5 && IMC<25){
-    console.log("Poids Normale")
-}else if (IMC>=25 && IMC<30){
-    console.log("Surpoids")
-}else{
-    console.log("Obesite")
+//boucle tant que
+//==============
+ */
+/*let compteur = 1;
+while (compteur <= 10){
+    console.log(compteur);
+    compteur = compteur + 1;
 }*/
-/*let N = Number(prompt("Saisir en nombre entre 1 et 10 "));
-if (N>=1 && N<=10){
-    console.log("merci vous avez entre " +N)
-}else {
-    console.log("Vous n'avez pas entré un nombre compris entre 1 et 10")
+//boucle faire tant que
+//====================
+/*let compteur = 11;
+do{
+    console.log(compteur);
+    compteur = compteur + 1;
+}while ( compteur<= 20)*/
+
+// boucle pour
+//============
+/*for (let i = 1; i<=10; i = i + 1){
+    console.log(i)
 }*/
 
-/*let année = Number(prompt("saisir un année pour savoir si année bissextile "));
-if (année%4 === 0 && année% 100 > 0) {
-    console.log(année + " année bissextile")
-}else if (année % 400 === 0){
-    console.log(année + " année bissextile")
-}else{
-    console.log("année normal")
+//
+/*tableux
+let tabMois = [];
+tabMois.push("janvier");
+tabMois.push("fevrier");
+tabMois.push("mars");
+tabMois.push("avril");
+tabMois.push("mai");
+console.log(tabMois);
+
+console.log("Taille = " + tabMois.length);// elements du tableaux
+console.log("Element n° 1 = " + tabMois[0]);
+//parcours du tableau
+for (let i = 0; i <= tabMois.length - 1 ; i = i + 1) {
+    console.log(tabMois[i]);
 }*/
-let année = Number(prompt("saisir un année pour savoir si année bissextile "));
-if (Number.isInteger(année/4)  && !Number.isInteger(année/100)) {
-    console.log(année + " année bissextile")
-}else if (Number.isInteger(année/400)){
-    console.log(année + " année bissextile")
-}else{
-    console.log("année normal")
-}
+
+/*let uneChaineDeCaracteres = "quel delice qu'est l'Algo avec JS";
+console.log(uneChaineDeCaracteres.length);
+console.log(uneChaineDeCaracteres[5]);*/
+
+
