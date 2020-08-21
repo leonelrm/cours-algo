@@ -20,7 +20,18 @@ tableau.push(seven);
 tableau.push(eight);
 tableau.push(nine);
 tableau.push(ten);*/
-let tableau = [];
+/*let tableau = [];
+let somme = 0;
 for (let i = 1; i<=10; i = i + 1) {
-    console.log(i)
+    console.log(i);
+    somme = somme + 1
+}*/
+let rep = String(prompt("voulez vous un cafe O/N? "));
+console.log(rep)
+if (rep !=="O" && rep !=="N"){
+       alert("Saisie erronée. Recommencez")
+}else if (rep === "O"){
+    console.log("votre cafe est en preparation")
+}else if (rep === "N"){
+   console.log("bonne Journee")
 }
